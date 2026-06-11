@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noé Mejía | Architectural Visualization Artist (Available for Remote Work)</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="High-end exterior and interior architectural visualizations for international studios, real estate, and competitions. Specialized in atmospheric imagery and visual storytelling. Available for remote collaboration.">
+    <meta name="keywords" content="Architectural Visualization Artist, ArchViz Artist, Remote 3D Artist, Architectural Rendering Specialist, 3ds Max, Corona Renderer, Digital Artist Peru">
+    <meta name="author" content="Noé Mejía">
+    
+    <!-- Open Graph (Share previews) -->
+    <meta property="og:title" content="Noé Mejía | ArchViz Portfolio">
+    <meta property="og:description" content="Atmospheric architectural imagery & visual storytelling for international practices.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- SYSTEM VARIABLES --- */
+        :root {
+            --bg-dark: #050505;
+            --bg-surface: #0c0c0c;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-main: #f5f5f7;
+            --text-muted: #86868b;
+            --accent-green: #00ff87;
+            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --font-main: 'Inter', sans-serif;
+        }
+
+        /* --- RESET & BASE STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-dark);
+            font-family: var(--font-main);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        button, .btn {
+            background: none;
+            border: none;
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        /* --- REUSABLE UTILITIES --- */
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 1.5rem; }
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        /* Reveal Animation on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(5,5,5,0.8) 0%, rgba(5,5,5,0) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--text-main);
+        }
+
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-green);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.5; }
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 10vh;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: brightness(0.45) contrast(1.05);
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, var(--bg-dark), transparent);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: #636366;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            border-left: 1px solid var(--border-color);
+            padding-left: 1rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn-primary {
+            background: var(--text-main);
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--text-main);
+            box-shadow: inset 0 0 0 1px var(--text-main);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 1rem 2.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--text-main);
+        }
+
+        /* --- PORTFOLIO SECTION (EDITORIAL GRID) --- */
+        .portfolio {
+            padding: 12rem 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6rem 4rem;
+        }
+
+        @media (max-width: 992px) {
+            .portfolio-grid { grid-template-columns: 1fr; gap: 4rem; }
+        }
+
+        .project-card {
+            display: block;
+            cursor: pointer;
+        }
+
+        .project-img-wrapper {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            background-color: #111;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card:hover .project-img-wrapper img {
+            transform: scale(1.03);
+            filter: brightness(1.05);
+        }
+
+        .project-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-category {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .project-meta {
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .project-software {
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            color: #444;
+            margin-top: 0.25rem;
+            text-transform: uppercase;
+        }
+
+        /* --- SPECIALIZATION SECTION --- */
+        .specialization {
+            padding: 8rem 0;
+            background-color: var(--bg-surface);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .spec-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .spec-grid { grid-template-columns: 1fr; }
+        }
+
+        .spec-card {
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .spec-card h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .spec-card p {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* --- REMOTE WORK VALUE PROP SECTION --- */
+        .remote-work {
+            padding: 10rem 0;
+        }
+
+        .remote-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        @media (max-width: 1024px) {
+            .remote-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .remote-grid { grid-template-columns: 1fr; }
+        }
+
+        .remote-item {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Minimal Vector Asset Mimicry via CSS Layouts */
+        .remote-icon-frame {
+            width: 24px;
+            height: 24px;
+            border: 1px solid var(--text-muted);
+            position: relative;
+            margin-bottom: 0.5rem;
+            opacity: 0.7;
+        }
+        
+        .remote-icon-frame::before {
+            content: '';
+            position: absolute;
+            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            border: 1px dashed var(--text-muted);
+        }
+
+        .remote-item h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .remote-item p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about {
+            padding: 10rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        .about-text {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            line-height: 1.5;
+            color: var(--text-main);
+        }
+
+        .about-text span {
+            color: var(--text-muted);
+        }
+
+        /* --- CONTACT & FOOTER SECTION --- */
+        .contact {
+            padding: 10rem 0 6rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            margin-bottom: 8rem;
+        }
+
+        @media (max-width: 992px) {
+            .contact-layout { grid-template-columns: 1fr; gap: 4rem; }
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .email-link {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 200;
+            letter-spacing: -0.02em;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .email-link:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+        }
+
+        .social-manifesto {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .social-manifesto a {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+        }
+
+        .social-manifesto a:hover {
+            color: var(--text-main);
+        }
+
+        /* Minimalist Form UI */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--text-main);
+        }
+
+        .form-label {
+            position: absolute;
+            top: 1rem;
+            left: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            pointer-events: none;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-input:focus ~ .form-label,
+        .form-input:not(:placeholder-shown) ~ .form-label {
+            top: -1rem;
+            font-size: 0.7rem;
+            color: var(--text-main);
+        }
+
+        /* FOOTER STRUCTURE */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container { flex-direction: column; gap: 2rem; }
+        }
+
+        .footer-logo h4 {
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* --- MODAL / OVERLAY PORTFOLIO PROJECT VIEW --- */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-dark);
+            z-index: 200;
+            overflow-y: auto;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-close-btn {
+            position: fixed;
+            top: 2rem;
+            right: 4rem;
+            z-index: 201;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            background: rgba(5,5,5,0.8);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(5px);
+        }
+
+        @media (max-width: 768px) {
+            .modal-close-btn { right: 1.5rem; }
+        }
+
+        .modal-content-wrapper {
+            padding: 8rem 0;
+        }
+
+        .modal-hero-img {
+            width: 100%;
+            aspect-ratio: 21 / 9;
+            background-color: #111;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 992px) {
+            .modal-hero-img { aspect-ratio: 16 / 9; }
+        }
+
+        .modal-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+
+        @media (max-width: 768px) {
+            .modal-meta-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        .modal-meta-sidebar h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .meta-list-item {
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .meta-list-item label {
+            display: block;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+            font-size: 0.75rem;
+        }
+
+        .modal-description-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #d1d1d6;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .modal-gallery-strip {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .modal-gallery-strip img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Noé Mejía</a>
+            <nav class="nav-menu">
+                <a href="#work" class="active">Work</a>
+                <a href="#specialization">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="badge-status">
+                <span class="pulse-dot"></span>
+                Available for Remote Work
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN INTERFACE -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <!-- Background Architectural Cinematic Placement Placeholder -->
+            <div class="hero-bg">
+                <img src="matices.jpg" alt="Cinematic Architectural Space Background">
+            </div>
+            <div class="container" style="width: 100%;">
+                <div class="hero-content reveal">
+                    <h1>Architectural Visualization Artist</h1>
+                    <h2>High-End Exterior and Interior Visualizations for Architecture, Real Estate and Design Competitions.</h2>
+                    <p class="hero-description">Specialized in atmospheric architectural imagery, photorealistic rendering and visual storytelling.</p>
+                    
+                    <div class="tech-stack">
+                        <span>3ds Max</span> • <span>Corona Renderer</span> • <span>Photoshop</span> • <span>AI-Assisted Workflow</span>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#work" class="btn btn-primary">View Portfolio</a>
+                        <a href="#contact" class="btn btn-secondary">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section class="portfolio" id="work">
+            <div class="container">
+                <h2 class="section-title">Selected Portfolio</h2>
+                
+                <div class="portfolio-grid">
+                    
+                    <!-- Card 1 -->
+                    <article class="project-card reveal" onclick="openProject('a10-daylight')">
+                        <div class="project-img-wrapper">
+                            <img src="edificioa10.jpg"A10 Residential Tower Daylight View">
+                        </div>
+                        <div class="project-info">
+                            <div>
+                                <h3 class="project-title">A10 Residential Tower</h3>
+                                <p class="project-category">Exterior / Daylight Visualization</p>
+                            </div>
+                            <div class="project-meta">
+                                <div>2026</div>
+                                <div class="project-software">3ds Max + Corona</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="project-card reveal" onclick="openProject('a10-night')">
+                        <div class="project-img-wrapper">
+                            <img src="edificioa10noche.jpg" alt="A10 Residential Tower Night View">
+                        </div>
+                        <div class="project-info">
+                            <div>
+                                <h3 class="project-title">A10 Residential Tower</h3>
+                                <p class="project-category">Night Visualization</p>
+                            </div>
+                            <div class="project-meta">
+                                <div>2026</div>
+                                <div class="project-software">3ds Max + Corona</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="project-card reveal" onclick="openProject('pacific-villa-ext')">
+                        <div class="project-img-wrapper">
+                            <img src="villapacifico.jpg" alt="Pacific Villa Exterior View">
+                        </div>
+                        <div class="project-info">
+                            <div>
+                                <h3 class="project-title">Pacific Villa</h3>
+                                <p class="project-category">Exterior Visualization</p>
+                            </div>
+                            <div class="project-meta">
+                                <div>2025</div>
+                                <div class="project-software">3ds Max + Corona</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="project-card reveal" onclick="openProject('pacific-villa-ext')">
+                        <div class="project-img-wrapper">
+                            <img src="Villappacíficointerior.jpg" alt="Pacific Villa Exterior View">
+                        </div>
+                        <div class="project-info">
+                            <div>
+                                <h3 class="project-title">Pacific Villa</h3>
+                                <p class="project-category">Exterior Visualization</p>
+                            </div>
+                            <div class="project-meta">
+                                <div>2025</div>
+                                <div class="project-software">3ds Max + Corona</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="project-card reveal" onclick="openProject('pacific-villa-int')">
+                        <div class="project-img-wrapper">
+                            <img src="matices.jpg" alt="Pacific Villa Interior View">
+                        </div>
+                        <div class="project-info">
+                            <div>
+                                <h3 class="project-title">Matices I</h3>
+                                <p class="project-category">Exterior Visualization</p>
+                            </div>
+                            <div class="project-meta">
+                                <div>2025</div>
+                                <div class="project-software">3ds Max + Corona</div>
+                            </div>
+                        </div>
+
+                    </article>
+                    <!-- Card 4 -->
+                    <article class="project-card reveal" onclick="openProject('pacific-villa-int')">
+                        <div class="project-img-wrapper">
+                            <img src="escuelarural1.jpg" alt="Pacific Villa Interior View">
+                        </div>
+                        <div class="project-info">
+                            <div>
+                                <h3 class="project-title">Rural Secondary School</h3>
+                                <p class="project-category">3D Model</p>
+                            </div>
+                            <div class="project-meta">
+                                <div>2025</div>
+                                <div class="project-software">3ds Max + Corona</div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECIALIZATION SECTION -->
+        <section class="specialization" id="specialization">
+            <div class="container">
+                <h2 class="section-title">What I Do</h2>
+                <div class="spec-grid">
+                    
+                    <div class="spec-card reveal">
+                        <h3>Exterior Visualization</h3>
+                        <p>Photorealistic exterior renderings for architecture and real estate developments with deep focus on context articulation.</p>
+                    </div>
+
+                    <div class="spec-card reveal">
+                        <h3>Interior Visualization</h3>
+                        <p>Atmospheric interiors focused on materiality, light behavior, physical texture correctness and spatial experience.</p>
+                    </div>
+
+                    <div class="spec-card reveal">
+                        <h3>Competition Imagery</h3>
+                        <p>Conceptual and impactful images tailored for strict deadlines, competitions and global architectural presentations.</p>
+                    </div>
+
+                    <div class="spec-card reveal">
+                        <h3>Architectural Storytelling</h3>
+                        <p>Visual narratives that communicate core design intents, emotions and ambient conditions beyond technical frame representation.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- REMOTE COLLABORATION VALUE PROP -->
+        <section class="remote-work">
+            <div class="container">
+                <h2 class="section-title">Available Worldwide</h2>
+                <div class="remote-grid">
+                    
+                    <div class="remote-item reveal">
+                        <div class="remote-icon-frame"></div>
+                        <h3>Remote Collaboration</h3>
+                        <p>Flexible pipeline configurations natively integrated into international workflows and studio systems.</p>
+                    </div>
+
+                    <div class="remote-item reveal">
+                        <div class="remote-icon-frame"></div>
+                        <h3>Professional Comm.</h3>
+                        <p>Fluid asset and project progression coordination in fluent English and Spanish.</p>
+                    </div>
+
+                    <div class="remote-item reveal">
+                        <div class="remote-icon-frame"></div>
+                        <h3>Fast Delivery</h3>
+                        <p>Optimized technical asset management ensuring delivery accuracy on strict timelines.</p>
+                    </div>
+
+                    <div class="remote-item reveal">
+                        <div class="remote-icon-frame"></div>
+                        <h3>Architectural Expertise</h3>
+                        <p>Dual profile execution: Trained Architect + Advanced Visualization Artist understanding space structure deeply.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <div class="about-layout reveal">
+                    <div><!-- Left Empty Spacer for Grid Structure Alignment --></div>
+                    <div class="about-text">
+                        Architect and Architectural Visualization Artist based in Peru. <br><br>
+                        <span>Specialized in creating atmospheric, photorealistic and emotionally engaging architectural imagery using 3ds Max, Corona Renderer and Photoshop. Available for remote collaboration with architecture studios, developers and visualization companies worldwide.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Let's Work Together</h2>
+        
+        <div class="contact-layout">
+            
+            <div class="reveal">
+                <!-- CORREGIDO: El enlace y el texto apuntan al mismo correo -->
+                <a href="mailto:dilmer.mejiaortiz@gmail.com" class="email-link">dilmer.mejiaortiz@gmail.com</a>
+                <div class="social-manifesto">
+                    <a href="#" target="_blank">Instagram</a>
+                </div>
+            </div>
+
+            <!-- FORMULARIO CORREGIDO Y PREPARADO PARA ENLAZAR -->
+            <form class="contact-form reveal" action="https://formspree.io/f/xzdqjpjk" method="POST">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
+                    <label for="name" class="form-label">Your Name / Studio</label>
+                </div>
+                
+                <div class="form-group">
+                    <!-- CORREGIDO: id="email" restaurado y name="email" añadido -->
+                    <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
+                    <label for="email" class="form-label">Your Email</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="message" name="message" class="form-input" placeholder=" " required>
+                    <label for="message" class="form-label">Project Brief / Message</label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Inquiry</button>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <h4>Noé Mejía</h4>
+                <p>Architectural Visualization Artist</p>
+            </div>
+            <div>
+                <p>Available for Remote International Projects</p>
+                <p>Global Workspace Integration</p>
+            </div>
+            <div>
+                <p>&copy; 2026 — Built For International Scale</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- PORTFOLIO DYNAMIC FULLSCREEN MODAL --- -->
+    <div class="project-modal" id="projectModal">
+        <button class="modal-close-btn" onclick="closeProject()">← Close Project</button>
+        
+        <div class="modal-content-wrapper">
+            <div class="modal-hero-img">
+                <img id="modalHero" src="" alt="Project Hero Render">
+            </div>
+            
+            <div class="container">
+                <div class="modal-meta-grid">
+                    <div class="modal-meta-sidebar">
+                        <h2 id="modalTitle">Project Name</h2>
+                        
+                        <div class="meta-list-item">
+                            <label>Category</label>
+                            <span id="modalCategory">Exterior Visualization</span>
+                        </div>
+                        <div class="meta-list-item">
+                            <label>Year</label>
+                            <span id="modalYear">2026</span>
+                        </div>
+                        <div class="meta-list-item">
+                            <label>Software Engine</label>
+                            <span id="modalSoftware">3ds Max + Corona Renderer</span>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-description-content">
+                        <p id="modalDesc">Project description specialized detailing. Architectural composition metrics, lighting setup definition, and material synthesis frameworks designed to evoke cinematic environments.</p>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;"><strong>Workflow Process:</strong> High precision 3D asset population, exact environmental weather projection setting, custom uncompressed texture shader layers processing, color grading mapping match via visual art directions.</p>
+                    </div>
+                </div>
+
+                <!-- Secondary High Resolution Strips Showcase Container -->
+                <div class="modal-gallery-strip">
+                    <img id="modalSec1" src="" alt="Alternative Frame 1">
+                    <img id="modalSec2" src="" alt="Alternative Frame 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- CORE INTERACTION JAVASCRIPT --- -->
+    <script>
+        /* Database Simulation mapping keys directly for instant asset populates without network latency */
+        const projectData = {
+            'a10-daylight': {
+                title: 'A10 Residential Tower',
+                category: 'Exterior / Daylight Visualization',
+                year: '2026',
+                software: '3ds Max / Corona Renderer / Photoshop',
+                desc: 'An exploration of harsh noon shadow lines and monolithic slab reflections. The visual strategy focused on exposing concrete texturing and glass transparency matching real-world physical material values under bright overcast sky structures.',
+                imgs: [
+                    'edificioa10.jpg',
+                    'edificioa104.jpg'
+                ]
+            },
+            'a10-night': {
+                title: 'A10 Residential Tower',
+                category: 'Night & Twilight Visualization',
+                year: '2026',
+                software: '3ds Max / Corona Renderer / LightMix',
+                desc: 'Atmospheric light balancing setup displaying standard interior luminescence conflicting with blue hour ambient environmental skies. Developed to manifest warmth inside structural concrete cages.',
+                imgs: [
+                    'edificioa10noche.jpg',
+                    'edificioa103.jpg'
+                ]
+            },
+            'pacific-villa-ext': {
+                title: 'Pacific Villa',
+                category: 'Exterior / Nordic Coast Context',
+                year: '2025',
+                software: '3ds Max / Corona Renderer / Forest Pack',
+                desc: 'Minimalist residential layout integrated inside a moody dark environment. Focused heavily on scattering accurate coastal ground vegetation matching architectural spatial honesty principles.',
+                imgs: [
+                    'villapacifico.jpg'
+
+                ]
+},
+    // SOLUCIÓN: Cambiar la clave al nombre real del proyecto para diferenciarlo por completo
+    'rural-school-int': {
+        title: 'Rural Secondary School',
+        category: 'Interior Atmosphere Framework', // o Educational Visualization
+        year: '2025',
+        software: '3ds Max / Corona Renderer / Substance Painter',
+        desc: 'Diseño e iluminación de aulas modulares enfocadas en el confort térmico y materiales locales...', // Modificar descripción
+        imgs: [
+            'escuelarural1.jpg' // Añadir extensión (.jpg) si le faltaba
+        ]
+            }
+        };
+
+        /* Modal Controllers Logic */
+        function openProject(key) {
+            const data = projectData[key];
+            if(!data) return;
+
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalCategory').innerText = data.category;
+            document.getElementById('modalYear').innerText = data.year;
+            document.getElementById('modalSoftware').innerText = data.software;
+            document.getElementById('modalDesc').innerText = data.desc;
+            
+            document.getElementById('modalHero').src = data.imgs[0];
+            document.getElementById('modalSec1').src = data.imgs[1];
+            document.getElementById('modalSec2').src = data.imgs[2];
+
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Locks main body scroll
+        }
+
+        function closeProject() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('open');
+            document.body.style.overflow = ''; // Restores body scroll
+        }
+
+        /* Scroll Interaction Animations (Intersection Observer API) */
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        /* Active Navigation Link Switching on Scroll Logic */
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let scrollY = window.pageYOffset;
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 120;
+                const sectionId = current.getAttribute('id');
+                const navLink = document.querySelector(`.nav-menu a[href*=${sectionId}]`);
+                
+                if (navLink) {
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        navLink.classList.add('active');
+                    } else {
+                        navLink.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
