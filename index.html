@@ -733,7 +733,6 @@
 
         <!-- HERO SECTION -->
         <section class="hero" id="home">
-            <!-- Background Architectural Cinematic Placement Placeholder -->
             <div class="hero-bg">
                 <img src="matices.jpg" alt="Cinematic Architectural Space Background">
             </div>
@@ -765,7 +764,7 @@
                     <!-- Card 1 -->
                     <article class="project-card reveal" onclick="openProject('a10-daylight')">
                         <div class="project-img-wrapper">
-                            <img src="edificioa10.jpg"A10 Residential Tower Daylight View">
+                            <img src="edificioa10.jpg" alt="A10 Residential Tower Daylight View">
                         </div>
                         <div class="project-info">
                             <div>
@@ -804,7 +803,7 @@
                         <div class="project-info">
                             <div>
                                 <h3 class="project-title">Pacific Villa</h3>
-                                <p class="project-category">Exterior Visualization</p>
+                                <p class="project-category">Exterior / Daylight Visualization</p>
                             </div>
                             <div class="project-meta">
                                 <div>2025</div>
@@ -813,15 +812,15 @@
                         </div>
                     </article>
 
-                    <!-- Card 3 -->
-                    <article class="project-card reveal" onclick="openProject('pacific-villa-ext')">
+                    <!-- Card 4 -->
+                    <article class="project-card reveal" onclick="openProject('pacific-villa-int')">
                         <div class="project-img-wrapper">
-                            <img src="Villappacíficointerior.jpg" alt="Pacific Villa Exterior View">
+                            <img src="Villappacíficointerior.jpg" alt="Pacific Villa Interior View">
                         </div>
                         <div class="project-info">
                             <div>
                                 <h3 class="project-title">Pacific Villa</h3>
-                                <p class="project-category">Exterior Visualization</p>
+                                <p class="project-category">Interior Visualization</p>
                             </div>
                             <div class="project-meta">
                                 <div>2025</div>
@@ -830,32 +829,32 @@
                         </div>
                     </article>
 
-                    <!-- Card 4 -->
-                    <article class="project-card reveal" onclick="openProject('pacific-villa-int')">
+                    <!-- Card 5 (CORREGIDO) -->
+                    <article class="project-card reveal" onclick="openProject('matices-i')">
                         <div class="project-img-wrapper">
-                            <img src="matices.jpg" alt="Pacific Villa Interior View">
+                            <img src="matices.jpg" alt="Matices I Exterior View">
                         </div>
                         <div class="project-info">
                             <div>
                                 <h3 class="project-title">Matices I</h3>
-                                <p class="project-category">Exterior Visualization</p>
+                                <p class="project-category">Exterior Visualization / Spatial Analysis</p>
                             </div>
                             <div class="project-meta">
                                 <div>2025</div>
                                 <div class="project-software">3ds Max + Corona</div>
                             </div>
                         </div>
-
                     </article>
-                    <!-- Card 4 -->
-                    <article class="project-card reveal" onclick="openProject('pacific-villa-int')">
+
+                    <!-- Card 6 (CORREGIDO) -->
+                    <article class="project-card reveal" onclick="openProject('rural-school-int')">
                         <div class="project-img-wrapper">
-                            <img src="escuelarural1.jpg" alt="Pacific Villa Interior View">
+                            <img src="escuelarural1.jpg" alt="Rural Secondary School Interior View">
                         </div>
                         <div class="project-info">
                             <div>
                                 <h3 class="project-title">Rural Secondary School</h3>
-                                <p class="project-category">3D Model</p>
+                                <p class="project-category">Interior Atmosphere Framework</p>
                             </div>
                             <div class="project-meta">
                                 <div>2025</div>
@@ -937,7 +936,7 @@
             <div class="container">
                 <h2 class="section-title">About</h2>
                 <div class="about-layout reveal">
-                    <div><!-- Left Empty Spacer for Grid Structure Alignment --></div>
+                    <div></div>
                     <div class="about-text">
                         Architect and Architectural Visualization Artist based in Peru. <br><br>
                         <span>Specialized in creating atmospheric, photorealistic and emotionally engaging architectural imagery using 3ds Max, Corona Renderer and Photoshop. Available for remote collaboration with architecture studios, developers and visualization companies worldwide.</span>
@@ -946,45 +945,42 @@
             </div>
         </section>
 
-<!-- CONTACT SECTION -->
-<section class="contact" id="contact">
-    <div class="container">
-        <h2 class="section-title">Let's Work Together</h2>
-        
-        <div class="contact-layout">
-            
-            <div class="reveal">
-                <!-- CORREGIDO: El enlace y el texto apuntan al mismo correo -->
-                <a href="mailto:dilmer.mejiaortiz@gmail.com" class="email-link">dilmer.mejiaortiz@gmail.com</a>
-                <div class="social-manifesto">
-                    <a href="#" target="_blank">Instagram</a>
+        <!-- CONTACT SECTION -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Let's Work Together</h2>
+                
+                <div class="contact-layout">
+                    
+                    <div class="reveal">
+                        <a href="mailto:dilmer.mejiaortiz@gmail.com" class="email-link">dilmer.mejiaortiz@gmail.com</a>
+                        <div class="social-manifesto">
+                            <a href="#" target="_blank">Instagram</a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form reveal" action="https://formspree.io/f/xzdqjpjk" method="POST">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
+                            <label for="name" class="form-label">Your Name / Studio</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
+                            <label for="email" class="form-label">Your Email</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="message" name="message" class="form-input" placeholder=" " required>
+                            <label for="message" class="form-label">Project Brief / Message</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Inquiry</button>
+                    </form>
+
                 </div>
             </div>
-
-            <!-- FORMULARIO CORREGIDO Y PREPARADO PARA ENLAZAR -->
-            <form class="contact-form reveal" action="https://formspree.io/f/xzdqjpjk" method="POST">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
-                    <label for="name" class="form-label">Your Name / Studio</label>
-                </div>
-                
-                <div class="form-group">
-                    <!-- CORREGIDO: id="email" restaurado y name="email" añadido -->
-                    <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
-                    <label for="email" class="form-label">Your Email</label>
-                </div>
-                
-                <div class="form-group">
-                    <input type="text" id="message" name="message" class="form-input" placeholder=" " required>
-                    <label for="message" class="form-label">Project Brief / Message</label>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Inquiry</button>
-            </form>
-
-        </div>
-    </div>
-</section>
+        </section>
 
     </main>
 
@@ -1034,12 +1030,11 @@
                     </div>
                     
                     <div class="modal-description-content">
-                        <p id="modalDesc">Project description specialized detailing. Architectural composition metrics, lighting setup definition, and material synthesis frameworks designed to evoke cinematic environments.</p>
+                        <p id="modalDesc">Project description specialized detailing.</p>
                         <p style="color: var(--text-muted); font-size: 0.95rem;"><strong>Workflow Process:</strong> High precision 3D asset population, exact environmental weather projection setting, custom uncompressed texture shader layers processing, color grading mapping match via visual art directions.</p>
                     </div>
                 </div>
 
-                <!-- Secondary High Resolution Strips Showcase Container -->
                 <div class="modal-gallery-strip">
                     <img id="modalSec1" src="" alt="Alternative Frame 1">
                     <img id="modalSec2" src="" alt="Alternative Frame 2">
@@ -1082,23 +1077,41 @@
                 desc: 'Minimalist residential layout integrated inside a moody dark environment. Focused heavily on scattering accurate coastal ground vegetation matching architectural spatial honesty principles.',
                 imgs: [
                     'villapacifico.jpg'
-
                 ]
-},
-    // SOLUCIÓN: Cambiar la clave al nombre real del proyecto para diferenciarlo por completo
-    'rural-school-int': {
-        title: 'Rural Secondary School',
-        category: 'Interior Atmosphere Framework', // o Educational Visualization
-        year: '2025',
-        software: '3ds Max / Corona Renderer / Substance Painter',
-        desc: 'Diseño e iluminación de aulas modulares enfocadas en el confort térmico y materiales locales...', // Modificar descripción
-        imgs: [
-            'escuelarural1.jpg' // Añadir extensión (.jpg) si le faltaba
-        ]
+            },
+            'pacific-villa-int': {
+                title: 'Pacific Villa',
+                category: 'Interior Visualization',
+                year: '2025',
+                software: '3ds Max / Corona Renderer',
+                desc: 'Atmospheric interior frame capturing volumetric light streams and raw physical material properties inside the core open-plan layouts.',
+                imgs: [
+                    'Villappacíficointerior.jpg'
+                ]
+            },
+            'matices-i': {
+                title: 'Matices I',
+                category: 'Exterior Visualization / Spatial Analysis',
+                year: '2025',
+                software: '3ds Max / Corona Renderer / Photoshop',
+                desc: 'A dedicated study on subtle cinematic atmospheres, analyzing color grading configurations and light behaviors over smooth geometric synthesis. Designed to emphasize visual contrast and material raw details under distinct daylight frames.',
+                imgs: [
+                    'matices.jpg'
+                ]
+            },
+            'rural-school-int': {
+                title: 'Rural Secondary School',
+                category: 'Interior Atmosphere Framework',
+                year: '2025',
+                software: '3ds Max / Corona Renderer / Substance Painter',
+                desc: 'Interior rendering and environmental resolution tailored for educational spaces. Developed with an deep focus on localized thermal comfort metrics, custom wood shader setups, and bespoke modular design layouts using raw honest materiality.',
+                imgs: [
+                    'escuelarural1.jpg'
+                ]
             }
         };
 
-        /* Modal Controllers Logic */
+        /* Modal Controllers Logic (CORREGIDO: Evita imágenes rotas si no hay secundarias) */
         function openProject(key) {
             const data = projectData[key];
             if(!data) return;
@@ -1109,19 +1122,35 @@
             document.getElementById('modalSoftware').innerText = data.software;
             document.getElementById('modalDesc').innerText = data.desc;
             
-            document.getElementById('modalHero').src = data.imgs[0];
-            document.getElementById('modalSec1').src = data.imgs[1];
-            document.getElementById('modalSec2').src = data.imgs[2];
+            // Carga la principal siempre
+            document.getElementById('modalHero').src = data.imgs[0] || '';
+            
+            // Controla de forma segura si existen imágenes secundarias
+            const sec1 = document.getElementById('modalSec1');
+            if(data.imgs && data.imgs[1]) { 
+                sec1.src = data.imgs[1]; 
+                sec1.style.display = 'block'; 
+            } else { 
+                sec1.style.display = 'none'; 
+            }
+
+            const sec2 = document.getElementById('modalSec2');
+            if(data.imgs && data.imgs[2]) { 
+                sec2.src = data.imgs[2]; 
+                sec2.style.display = 'block'; 
+            } else { 
+                sec2.style.display = 'none'; 
+            }
 
             const modal = document.getElementById('projectModal');
             modal.classList.add('open');
-            document.body.style.overflow = 'hidden'; // Locks main body scroll
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeProject() {
             const modal = document.getElementById('projectModal');
             modal.classList.remove('open');
-            document.body.style.overflow = ''; // Restores body scroll
+            document.body.style.overflow = ''; 
         }
 
         /* Scroll Interaction Animations (Intersection Observer API) */
